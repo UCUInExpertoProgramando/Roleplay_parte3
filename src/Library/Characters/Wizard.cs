@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 namespace RoleplayGame
 {
-    public class Wizard: IMagicCharacter
+    public class Wizard: MagicCharacter
     {
         private int health = 100;
 
-        private List<IItem> items = new List<IItem>();
+        private List<Item> items = new List<Item>();
 
-        private List<IMagicalItem> magicalItems = new List<IMagicalItem>();
+        private List<MagicalItem> magicalItems = new List<MagicalItem>();
 
         public Wizard(string name)
         {
@@ -23,18 +23,18 @@ namespace RoleplayGame
             get
             {
                 int value = 0;
-                foreach (IItem item in this.items)
+                foreach (Item item in this.items)
                 {
-                    if (item is IAttackItem)
+                    if (item is AttackItem)
                     {
-                        value += (item as IAttackItem).AttackValue;
+                        value += (item as AttackItem).AttackValue;
                     }
                 }
-                foreach (IMagicalItem item in this.magicalItems)
+                foreach (MagicalItem item in this.magicalItems)
                 {
                     if (item is IMagicalAttackItem)
                     {
-                        value += (item as IMagicalAttackItem).AttackValue;
+                        value += (item as MagicalAttackItem).AttackValue;
                     }
                 }
                 return value;
@@ -46,18 +46,18 @@ namespace RoleplayGame
             get
             {
                 int value = 0;
-                foreach (IItem item in this.items)
+                foreach (Item item in this.items)
                 {
-                    if (item is IDefenseItem)
+                    if (item is DefenseItem)
                     {
-                        value += (item as IDefenseItem).DefenseValue;
+                        value += (item as DefenseItem).DefenseValue;
                     }
                 }
-                foreach (IMagicalItem item in this.magicalItems)
+                foreach (MagicalItem item in this.magicalItems)
                 {
-                    if (item is IMagicalDefenseItem)
+                    if (item is MagicalDefenseItem)
                     {
-                        value += (item as IMagicalDefenseItem).DefenseValue;
+                        value += (item as MagicalDefenseItem).DefenseValue;
                     }
                 }
                 return value;
@@ -89,22 +89,22 @@ namespace RoleplayGame
             this.Health = 100;
         }
 
-        public void AddItem(IItem item)
+        public void AddItem(Item item)
         {
             this.items.Add(item);
         }
 
-        public void RemoveItem(IItem item)
+        public void RemoveItem(Item item)
         {
             this.items.Remove(item);
         }
 
-        public void AddItem(IMagicalItem item)
+        public void AddItem(MagicalItem item)
         {
             this.magicalItems.Add(item);
         }
 
-        public void RemoveItem(IMagicalItem item)
+        public void RemoveItem(MagicalItem item)
         {
             this.magicalItems.Remove(item);
         }
