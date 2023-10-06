@@ -1,6 +1,6 @@
 namespace RoleplayGame;
 
-public interface Heroe : ICharacter
+public interface Hero : ICharacter
 {
   public int VPCount;
 }
