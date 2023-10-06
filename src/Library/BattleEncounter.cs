@@ -1,6 +1,6 @@
 namespace RoleplayGame;
 
-public class BattleEncounter : Encounter
+public class BattleEncounter : IEncounter
 {
   public BattleEncounter(Heroe heroe, Enemigo enemigo)
   {
