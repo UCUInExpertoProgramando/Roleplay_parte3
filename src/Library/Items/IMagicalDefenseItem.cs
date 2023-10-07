@@ -1,6 +1,6 @@
 namespace RoleplayGame
 {
-    public interface IMagicalDefenseItem: MagicalItem
+    public interface IMagicalDefenseItem: IMagicalItem
     {
         int DefenseValue { get; }
     }

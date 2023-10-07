@@ -1,10 +1,12 @@
+using System.Collections.Generic;
+
 namespace RoleplayGame;
 
-public interface IEncounter
+public abstract class Encounter
 {
-  public list<Heroe> heroes;
-  public list<Enemigo> enemigos;
-  public void AddHero(Heroe heroe);
-  public void AddEnemy(Enemigo enemigo);
-  public void DoEncounter();
+  public List<IHero> heroes;
+  public List<IEnemy> enemigos;
+  public abstract void AddHero(IHero heroe);
+  public abstract void AddEnemy(IEnemy enemigo);
+  public abstract void DoEncounter();
 }

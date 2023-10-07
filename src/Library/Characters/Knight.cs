@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 namespace RoleplayGame
 {
-    public class Knight: ICharacter
+    public class Knight: IHero
     {
         private int health = 100;
 
-        private List<IItem> items = new List<IItem>();
+        public int VPCount { get; set; }
+
+        public List<IItem> items = new List<IItem>();
 
         public Knight(string name)
         {

@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 namespace RoleplayGame
 {
-    public class Archer: ICharacter
+    public class Archer: IHero
     {
         private int health = 100;
 
-        private List<IItem> items = new List<IItem>();
+        public List<IItem> items = new List<IItem>();
 
         public Archer(string name)
         {
@@ -60,6 +60,8 @@ namespace RoleplayGame
                 this.health = value < 0 ? 0 : value;
             }
         }
+
+        public int VPCount { get; set; }
 
         public void ReceiveAttack(int power)
         {

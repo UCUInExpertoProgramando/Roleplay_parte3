@@ -2,7 +2,7 @@ namespace RoleplayGame
 {
     public class SpellOne: Spell
     {
-        public int AttackValue
+        public override int AttackValue
         {
             get
             {
@@ -10,7 +10,7 @@ namespace RoleplayGame
             }
         }
 
-        public int DefenseValue
+        public override int DefenseValue
         {
             get
             {

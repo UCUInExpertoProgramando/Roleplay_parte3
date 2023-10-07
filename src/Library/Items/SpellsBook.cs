@@ -4,14 +4,14 @@ namespace RoleplayGame
 {
     public class SpellsBook: IMagicalAttackItem, IMagicalDefenseItem
     {
-        private List<ISpell> spells = new List<ISpell>();
+        public List<Spell> spells = new();
         
         public int AttackValue
         {
             get
             {
                 int value = 0;
-                foreach (ISpell spell in this.spells)
+                foreach (Spell spell in this.spells)
                 {
                     value += spell.AttackValue;
                 }
@@ -24,7 +24,7 @@ namespace RoleplayGame
             get
             {
                 int value = 0;
-                foreach (ISpell spell in this.spells)
+                foreach (Spell spell in this.spells)
                 {
                     value += spell.DefenseValue;
                 }
@@ -32,12 +32,12 @@ namespace RoleplayGame
             }
         }
 
-        public void AddSpell(ISpell spell)
+        public void AddSpell(Spell spell)
         {
             this.spells.Add(spell);
         }
 
-        public void RemoveSpell(ISpell spell)
+        public void RemoveSpell(Spell spell)
         {
             this.spells.Remove(spell);
         }

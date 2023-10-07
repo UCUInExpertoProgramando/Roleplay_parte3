@@ -1,6 +1,6 @@
 namespace RoleplayGame;
 
-public interface Hero : ICharacter
+public interface IHero : ICharacter
 {
-  public int VPCount;
+  public int VPCount{ get; set; }
 }

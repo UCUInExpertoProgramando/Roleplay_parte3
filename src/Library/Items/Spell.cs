@@ -2,8 +2,8 @@ namespace RoleplayGame
 {
     public abstract class Spell
     {
-        int AttackValue { get; }
+        public abstract int AttackValue { get; }
 
-        int DefenseValue { get; }
+        public abstract int DefenseValue { get; }
     }
 }

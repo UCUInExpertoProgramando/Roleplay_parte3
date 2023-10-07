@@ -5,8 +5,9 @@ namespace Program
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
+            /*
             SpellsBook book = new SpellsBook();
             book.AddSpell(new SpellOne());
             book.AddSpell(new SpellOne());
@@ -26,6 +27,7 @@ namespace Program
             gimli.Cure();
 
             Console.WriteLine($"Someone cured Gimli. Gimli now has ❤️ {gimli.Health}");
+            */
         }
     }
 }

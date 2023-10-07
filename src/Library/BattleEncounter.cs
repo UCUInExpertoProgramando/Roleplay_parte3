@@ -1,30 +1,32 @@
+using System.Collections.Generic;
+
 namespace RoleplayGame;
 
-public class BattleEncounter : IEncounter
+public class BattleEncounter : Encounter
 {
-  public BattleEncounter(Heroe heroe, Enemigo enemigo)
+  public BattleEncounter(IHero heroe, IEnemy enemigo)
   {
     heroes.Add(heroe);
     enemigos.Add(enemigo);
   }
 
-  public void AddHero(Heroe heroe)
+  public override void AddHero(IHero heroe)
   {
     heroes.Add(heroe);
   }
 
-  public void AddEnemy(Enemigo enemigo)
+  public override void AddEnemy(IEnemy enemigo)
   {
     enemigos.Add(enemigo);
   }
 
-  public void DoEncounter()
+  public override void DoEncounter()
   {
     //Preparación previa al búcle de batalla
-    int heroesVivos = heroes.length;
-    int enemigosVivos = enemigos.length;
-    list<int> VPGanados = new list<int>;
-    foreach (heroe in heroes)
+    int heroesVivos = heroes.Count;
+    int enemigosVivos = enemigos.Count;
+    List<int> VPGanados = new();
+    foreach (IHero heroe in heroes)
     {
       VPGanados.Add(0); //Define una lista con espacios para las cantidades de VP que obtuvo cada heroe en el encuentro.
     }
@@ -36,7 +38,7 @@ public class BattleEncounter : IEncounter
       //Todos los enemigos atacan una vez
     
       int contador = 0;
-      foreach(enemigo in enemigos)
+      foreach(IEnemy enemigo in enemigos)
       {
         if (heroesVivos > 0) //Comprueba que haya heroes vivos
         {
@@ -44,9 +46,9 @@ public class BattleEncounter : IEncounter
           while(heroes[contador].Health <= 0)
           {
             contador++;
-            if (contador>heroes.length-1)
+            if (contador>heroes.Count-1)
             {
-              contador -= heroes.length;
+              contador -= heroes.Count;
             }
           }
 
@@ -58,20 +60,20 @@ public class BattleEncounter : IEncounter
             heroesVivos--;
           }
           contador++;
-          if (contador>heroes.length-1)
+          if (contador>heroes.Count-1)
           {
-            contador -= heroes.length;
+            contador -= heroes.Count;
           }
         }
       }
 
       //Todos los heroes sobrevivientes atacan a cada uno de los enemigos
 
-      foreach(heroe in heroes)
+      foreach(IHero heroe in heroes)
       {
         if (enemigosVivos > 0)
         {
-          foreach(enemigo in enemigos)
+          foreach(IEnemy enemigo in enemigos)
           {
             if (enemigo.Health > 0)
             {
@@ -90,7 +92,7 @@ public class BattleEncounter : IEncounter
     }
 
     //Tras terminar el búcle de batalla, curar los héroes que hayan ganado 5 VP o más.
-    foreach(heroe in heroes)
+    foreach(IHero heroe in heroes)
     {
       if(VPGanados[heroes.IndexOf(heroe)] >= 5)
       {

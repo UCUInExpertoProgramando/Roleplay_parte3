@@ -1,6 +1,6 @@
 namespace RoleplayGame;
 
-public interface Enemy : ICharacter
+public interface IEnemy : ICharacter
 {
-  public int VPValue;
+  public int VPValue{ get; set; }
 }
