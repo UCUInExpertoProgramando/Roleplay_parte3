@@ -7,7 +7,7 @@ namespace RoleplayGame
 
         public int VPCount { get; set; }
 
-        public List<IItem> items = new List<IItem>();
+        public List<IItem> items = new();
 
         public Dwarf(string name)
         {

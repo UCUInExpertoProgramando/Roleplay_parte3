@@ -7,9 +7,9 @@ namespace RoleplayGame
 
         public int VPCount{ get; set; }
 
-        public List<IItem> items = new List<IItem>();
+        public List<IItem> items = new();
 
-        public List<IMagicalItem> magicalItems = new List<IMagicalItem>();
+        public List<IMagicalItem> magicalItems = new();
 
         public Wizard(string name)
         {

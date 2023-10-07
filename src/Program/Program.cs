@@ -7,15 +7,14 @@ namespace Program
     {
         static void Main()
         {
-            /*
-            SpellsBook book = new SpellsBook();
+            SpellsBook book = new();
             book.AddSpell(new SpellOne());
             book.AddSpell(new SpellOne());
 
-            Wizard gandalf = new Wizard("Gandalf");
+            Wizard gandalf = new("Gandalf");
             gandalf.AddItem(book);
 
-            Dwarf gimli = new Dwarf("Gimli");
+            Dwarf gimli = new("Gimli");
 
             Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
             Console.WriteLine($"Gandalf attacks Gimli with ⚔️ {gandalf.AttackValue}");
@@ -27,7 +26,6 @@ namespace Program
             gimli.Cure();
 
             Console.WriteLine($"Someone cured Gimli. Gimli now has ❤️ {gimli.Health}");
-            */
         }
     }
 }

@@ -5,7 +5,7 @@ namespace RoleplayGame
     {
         private int health = 100;
 
-        public List<IItem> items = new List<IItem>();
+        public List<IItem> items = new();
 
         public Archer(string name)
         {
