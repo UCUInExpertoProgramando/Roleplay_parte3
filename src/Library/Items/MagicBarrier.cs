@@ -1,12 +1,12 @@
 namespace RoleplayGame
 {
-    public class SpellOne: Spell
+    public class MagicBarrier: Spell
     {
         public override int AttackValue
         {
             get
             {
-                return 70;
+                return 0;
             }
         }
 
@@ -14,7 +14,7 @@ namespace RoleplayGame
         {
             get
             {
-                return 70;
+                return 100;
             }
         }
     }

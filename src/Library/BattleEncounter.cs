@@ -23,6 +23,7 @@ public class BattleEncounter : Encounter
   public override void DoEncounter()
   {
     //Preparación previa al búcle de batalla
+    int rondasTranscurridas = 0;
     int heroesVivos = heroes.Count;
     int enemigosVivos = enemigos.Count;
     List<int> VPGanados = new();
@@ -33,7 +34,7 @@ public class BattleEncounter : Encounter
 
     //Búcle de Batalla
 
-    while(enemigosVivos > 0 && heroesVivos > 0)
+    while(enemigosVivos > 0 && heroesVivos > 0 && rondasTranscurridas < 9999)
     {
       //Todos los enemigos atacan una vez
     

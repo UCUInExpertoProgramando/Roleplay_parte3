@@ -1,16 +1,16 @@
 namespace RoleplayGame
 {
-    public class Staff: IMagicalAttackItem, IMagicalDefenseItem
+    public class UltimateAttack: Spell
     {
-        public int AttackValue 
+        public override int AttackValue
         {
             get
             {
-                return 100;
-            } 
+                return 105;
+            }
         }
 
-        public int DefenseValue
+        public override int DefenseValue
         {
             get
             {

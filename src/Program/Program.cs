@@ -8,8 +8,8 @@ namespace Program
         static void Main()
         {
             SpellsBook book = new();
-            book.AddSpell(new SpellOne());
-            book.AddSpell(new SpellOne());
+            book.AddSpell(new BasicSpell());
+            book.AddSpell(new BasicSpell());
 
             Wizard gandalf = new("Gandalf");
             gandalf.AddItem(book);
