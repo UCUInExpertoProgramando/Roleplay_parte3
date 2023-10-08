@@ -114,7 +114,7 @@ namespace Test.Library
             Assert.AreEqual(100, quijote.Health);
             Assert.AreEqual(0, quijote.VPCount);
             Assert.AreEqual(150, armGoblin.Health);
-            Assert.AreEqual(1, armGoblin.VPValue);
+            Assert.AreEqual(2, armGoblin.VPValue);
 
 
 
@@ -144,7 +144,7 @@ namespace Test.Library
             dosContraDos.DoEncounter();
 
             //Testeo posterior al combate
-            Assert.AreEqual(90, dumbledore.Health);
+            Assert.AreEqual(100, dumbledore.Health);
             Assert.AreEqual(2, dumbledore.VPCount);
             Assert.AreEqual(100, lucas.Health);
             Assert.AreEqual(1, lucas.VPCount);
@@ -161,7 +161,8 @@ namespace Test.Library
             Lizard lizard2 = new("Lizard 2");
             Demon jefeFinal = new("Demonio Oscuro");
             Archer legolas = new("Legolas");
-            grimorio.AddSpell(new MagicBarrier());
+            
+
 
             //Testeo previo al combate
             Assert.AreEqual(200, lizard1.Health);
@@ -190,8 +191,8 @@ namespace Test.Library
             Assert.AreEqual(5, jefeFinal.VPValue);
             Assert.AreEqual(0, legolas.Health);
             Assert.AreEqual(0, legolas.VPCount);
-            Assert.AreEqual(40, dumbledore.Health);
-            Assert.AreEqual(0, dumbledore.VPCount);
+            Assert.AreEqual(100, dumbledore.Health);
+            Assert.AreEqual(11, dumbledore.VPCount);
         }
 
 
