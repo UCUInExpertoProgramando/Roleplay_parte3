@@ -6,6 +6,8 @@ public class BattleEncounter : Encounter
 {
   public BattleEncounter(IHero heroe, IEnemy enemigo)
   {
+    heroes = new List<IHero>();
+    enemigos = new List<IEnemy>();
     heroes.Add(heroe);
     enemigos.Add(enemigo);
   }
@@ -34,7 +36,7 @@ public class BattleEncounter : Encounter
 
     //Búcle de Batalla
 
-    while(enemigosVivos > 0 && heroesVivos > 0 && rondasTranscurridas < 9999)
+    while(enemigosVivos > 0 && heroesVivos > 0 && rondasTranscurridas < 999)
     {
       //Todos los enemigos atacan una vez
     
@@ -79,7 +81,7 @@ public class BattleEncounter : Encounter
             if (enemigo.Health > 0)
             {
               enemigo.ReceiveAttack(heroe.AttackValue);
-              if (enemigo.Health < 0)
+              if (enemigo.Health <= 0)
               {
                 //El heroe mató al enemigo con su ataque
                 heroe.VPCount += enemigo.VPValue;
@@ -90,6 +92,8 @@ public class BattleEncounter : Encounter
           }
         }  
       }
+
+      rondasTranscurridas++;
     }
 
     //Tras terminar el búcle de batalla, curar los héroes que hayan ganado 5 VP o más.

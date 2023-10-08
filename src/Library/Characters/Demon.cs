@@ -32,6 +32,13 @@ namespace RoleplayGame
                         value += (item as IAttackItem).AttackValue;
                     }
                 }
+                foreach (IMagicalItem item in this.magicalItems)
+                {
+                    if (item is IMagicalAttackItem)
+                    {
+                        value += (item as IMagicalAttackItem).AttackValue;
+                    }
+                }
                 return value;
             }
         }
@@ -46,6 +53,13 @@ namespace RoleplayGame
                     if (item is IDefenseItem)
                     {
                         value += (item as IDefenseItem).DefenseValue;
+                    }
+                }
+                foreach (IMagicalItem item in this.magicalItems)
+                {
+                    if (item is IMagicalDefenseItem)
+                    {
+                        value += (item as IMagicalDefenseItem).DefenseValue;
                     }
                 }
                 return value;
